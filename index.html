@@ -19,7 +19,7 @@
     <!-- HEADER -->
     <header class="text-center">
         <div class="container">
-            <h2 class="pt-4">Trenitalia</h2>
+            <h1 class="pt-4">Trenitalia di casa mia</h1>
             <p class="text-center pb-2">I nostri treni sono sempre in ritardo 🤞</p>
 
         </div>
@@ -29,35 +29,48 @@
         <div class="container rounded bg-light py-4 my-5">
             <div class="row justify-content-center text-center">
                 <h2 class="pb-3 fw-bold">Calcola prezzo biglietto</h2>
-                <div class="col">
 
-                    <div class="mb-3 px-3">
+                <div class="col-3">
+                    <div class="px-3">
                         <label for="username_input" class="form-label text-danger fw-bold fs-5">Nome e Cognome</label>
-                        <input type="text" class="form-control border border-danger" name="username"
-                            id="username_input">
+                        <input type="text" class="form-control border border-danger" name="username" id="username_input"
+                            value="">
                     </div>
                 </div>
-                <div class="col">
 
-                    <div class="mb-3 px-3">
-                        <label for="password_input" class="form-label text-danger fw-bold fs-5">Km da percorrere</label>
-                        <input type="text" class="form-control border border-danger" name="password"
-                            id="password_input">
+                <div class="col-3">
+
+                    <div class="px-3">
+                        <label for="travel_input" class="form-label text-danger fw-bold fs-5">Km da percorrere</label>
+                        <input type="text" class="form-control border border-danger" name="travel" id="travel_input"
+                            value="">
                     </div>
 
                 </div>
-                <div class="col">
 
-                    <div class="mb-3 px-3">
-                        <label for="userage_input" class="form-label text-danger fw-bold fs-5">Fascia d'età</label>
+                <div class="col-3">
+                    <label for="travel_input" class="my-form-label text-danger fw-bold fs-5">Fascia d'età</label>
+                    <div class="form-floating px-3">
+                        <select class="form-select form-select-md px-2 py-0 border-danger mb-3"
+                            style="height: 15px; min-height: 38px;" aria-label=".form-select-md example" name="userage"
+                            id="userage_input" value="">
+                            <option selected>Selezione l'età</option>
+                            <option value="0">Sei Maggiorenne</option>
+                            <option value="1">Hai meno di 18 anni</option>
+                            <option value="2"> Hai più di 65 anni</option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="mb-3 px-3">
+                        
                         <input type="text" class="form-control border border-danger" name="userage" id="userage_input">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row justify-content-center">
 
                     <div class="col pt-5">
-                        <button class="btn btn-outline-danger mx-2 fw-bold">Genera</button>
-                        <button class="btn btn-outline-danger mx-2 fw-bold">Annula</button>
+                        <button class="btn btn-outline-danger mx-2 fw-bold login-btn">Genera</button>
+                        <button class="btn btn-outline-danger mx-2 fw-bold reset-btn">Annulla</button>
 
                     </div>
                 </div>
@@ -71,27 +84,26 @@
                 <div class="row ">
                     <h3>Dettagli passeggero</h3>
                     <div class="col-4 bg-secondary text-white">
-                        <h4>Nome passeggero</h4>
-                        <h4>Jonny</h4>
-    
+                        <h4 class="p-3" id="username"></h4>
+
                     </div>
                     <div class="col-8 bg-danger text-white border">
                         <div class="row">
                             <div class="col p-3">
                                 <h5>Offerta</h5>
-                                <span id="">2€</span>
+                                <span id="supply"></span>
                             </div>
                             <div class="col p-3">
                                 <h5>Carrozza</h5>
-                                <span></span>
+                                <span id="vagon"></span>
                             </div>
                             <div class="col p-3">
                                 <h5>Codice CP</h5>
-                                <span></span>
+                                <span id="codCP"></span>
                             </div>
                             <div class="col p-3">
                                 <h5>Costo Biglietto</h5>
-                                <span ></span>
+                                <span id="price"></span>
                             </div>
                         </div>
                     </div>

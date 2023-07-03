@@ -1,49 +1,74 @@
-// const distKm = parseInt(prompt("Km da percorrere?"));
-// const userYearOfBirth = parseInt(prompt("in che anno sei nato?"));
-const currentDate = new Date();
-const userAge = currentDate.getFullYear() - parseInt(userYearOfBirth);
+const btnLogin = document.querySelector(".login-btn");
+const btnReset = document.querySelector(".reset-btn");
+const userNameInputElement = document.querySelector("[name='username']");
+const travelInputElement = document.querySelector("[name='travel']");
+const userAgeInputElement = document.querySelector("[name='userage']");
 
-// console.log("l'utente ha " + userAge + " anni");
 
-const price = parseInt((distKm * 0.21));
-
-// console.log(price);
+btnLogin.addEventListener("click", function () {
 
 
 
+    const userName = userNameInputElement.value;
+    const travel = travelInputElement.value;
+    const userAge = userAgeInputElement.value;
+    const priceForKm = 0.21;
+    const price = travel * priceForKm;
+    const priceYoung = (price - (price * 0.2)).toFixed(2);
+    const priceOld = (price - (price * 0.4)).toFixed(2);
 
-const priceYoung = price - (price * 0.2);
-const priceYoungDecimal = priceYoung.toFixed(2)
+    
 
-// console.log(priceYoungDecimal);
+    if (userAge === "" || travel === "" || userName === "") {
+        alert("Completa i campi selezionati");
+    } else {
 
-const priceOld = price - (price * 0.4);
-const priceOldDecimal = priceOld.toFixed(2)
+        let supply = "Biglietto Standard";
 
-// console.log(priceOldDecimal);
-if (userAge > 100) {
-    alert("Inserisci l'età corretta");
-} else {
-
-    if (userAge <= 18) {
-        document.getElementById("distKm").innerHTML = `${distKm}`;
-        document.getElementById("userAge").innerHTML = `${userAge}`;
-        document.getElementById("price").innerHTML = `${priceYoungDecimal}`;
-        // console.log("Sei piccolo");
-
-    } else if (userAge >= 65) {
-        document.getElementById("distKm").innerHTML = `${distKm}`;
-        document.getElementById("userAge").innerHTML = `${userAge}`;
-        document.getElementById("price").innerHTML = `${priceOldDecimal}`;
-        // console.log("Sei Vecchio")
-    }
-    else {
-        document.getElementById("distKm").innerHTML = `${distKm}`;
-        document.getElementById("userAge").innerHTML = `${userAge}`;
+        document.getElementById("username").innerHTML = `${userName}`
+        document.getElementById("supply").innerHTML = `${supply}`;
+        document.getElementById("vagon").innerHTML = `${Math.floor(Math.random() * 21) + 1}`;
+        document.getElementById("codCP").innerHTML = `${Math.floor(Math.random() * 100000) + 1}`;
         document.getElementById("price").innerHTML = `${price}`;
-        // console.log("Sei Maggiorenne")
+
+
+        if (userAge == 1) {
+
+            document.getElementById("supply").innerHTML = `Biglietto per Minorenni`;
+            document.getElementById("price").innerHTML = `${priceYoung}`;
+
+
+        } else if (userAge == 2) {
+            document.getElementById("supply").innerHTML = `Biglietto per Anziani`;
+            document.getElementById("price").innerHTML = `${priceOld}`;
+        }
     }
-}
+
+
+})
+
+btnReset.addEventListener("click", function () {
+
+    location.reload();
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const date = new Date();
 // const currentDay = date.getDate();
 // const currentMonth = date.getUTCMonth() + 1;
