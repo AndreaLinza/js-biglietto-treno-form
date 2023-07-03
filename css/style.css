@@ -1,0 +1,22 @@
+header{
+    background-color: crimson;
+    color: rgb(255, 255, 255);
+}
+
+body{
+    background-image: url(../img/Train.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#distKm::after{
+    content: "km";
+}
+#userAge::after{
+    content: ".";
+}
+
+#price::after{
+    content: "€";
+}
