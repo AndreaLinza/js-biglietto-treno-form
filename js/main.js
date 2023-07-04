@@ -19,7 +19,7 @@ btnLogin.addEventListener("click", function () {
 
     
 
-    if (userAge === "" || travel === "" || userName === "") {
+    if (isNaN(userAge) || travel === "" || userName === "") {
         alert("Completa i campi selezionati");
     } else {
 
